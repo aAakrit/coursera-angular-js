@@ -1,0 +1,30 @@
+<div class="container" ng-controller="InfoController as infctrl">
+  <table ng-if="infctrl.registered">
+    <tr>
+      <th>Firstname: </th>
+      <td>{{infctrl.fname}}</td>
+    </tr>
+    <tr>
+      <th>Lastname: </th>
+      <td>{{infctrl.lname}}</td>
+    </tr>
+    <tr>
+      <th>Email: </th>
+      <td>{{infctrl.email}}</td>
+    </tr>
+    <tr>
+      <th>Phone: </th>
+      <td>{{infctrl.phone}}</td>
+    </tr>
+    <tr>
+      <th>Fav Item: </th>
+      <td>{{infctrl.shortname}}</td>
+    </tr>
+  </table>
+  <img width="200" height="200" ng-src="https://let369-module5.herokuapp.com/images/{{infctrl.shortname}}.jpg" ng-if="infctrl.registered">
+  </br>
+  <span ng-if="infctrl.registered">Item name:  {{infctrl.name}}</span>
+  </br>
+  <span ng-if="infctrl.registered">Description:  {{infctrl.description}}</span>
+  <span ng-if="!infctrl.registered">Not Signed Up yet. <a ui-sref="public.form">Sign up now!</a></span>
+</div>

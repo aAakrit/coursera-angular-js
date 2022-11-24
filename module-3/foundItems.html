@@ -1,0 +1,11 @@
+<span ng-if='list.items == "No results"'>
+	{{list.items}}
+</span>
+<ol ng-if='list.items != "No results"'>
+   	<li ng-repeat="item in list.items">
+	    Name: {{ item.name }} </br>
+        Short-name: {{ item.short_name }}</br> 
+        Description: {{ item.description }}
+       <button ng-click="list.onRemove({index: $index});">Remove Item</button>
+	</li>
+</ol>
